@@ -18,7 +18,7 @@ def abc1(request):
 
 @login_required()
 def empdetail(request,pk):
-        qs=Employee.objects.get(id=pk)
+        qs =  Employee.objects.get(id=pk)
         template="core1/empdetail.html"
         return render(request,template,{"qs":qs})
 
@@ -38,6 +38,11 @@ def emp_form(request):
                 abcd.save()
                 return redirect('abc1')
         return render(request,'core1/emp_form.html',{'form':form})
+
+
+
+
+        
 
 @login_required()
 def emp_update(request,pk):
